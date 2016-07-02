@@ -6,6 +6,6 @@ package: Custom module - Required
 dependencies:
   - file
   - image
-
+  - image_url_formatter
 core: 8.x
 version: 1.0
