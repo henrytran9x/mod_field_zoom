@@ -18,7 +18,7 @@
         'easingDuration' : setting_zoom.easingDuration,
         'responsive' : (setting_zoom.responsive == 1 ) ? true : false,
         'scrollZoom' : (setting_zoom.scrollzoom == 1 ) ? true : false,
-        'imageCrossfade': true,
+
     };
 
     switch (setting_zoom.zoomType){
@@ -61,13 +61,13 @@
     }
         settings_mode.gallery = $this.find(".gallery-zoom").attr('id');
         settings_mode.galleryActiveClass = 'active';
-
+        settings_mode.imageCrossfade = true;
         selector.elevateZoom(settings_mode);
 
         $this.find('.gallery-zoom a').attr('href','#');
 
-        $this.find("div[id^='zoom-formatter']").bind("click", function(e) {
-            var ez =   $(this).data('elevateZoom');
+        selector.bind("click", function(e) {
+            var ez =   selector.data('elevateZoom');
             ez.closeAll();
             $.fancybox(ez.getGalleryList());
             return false;
