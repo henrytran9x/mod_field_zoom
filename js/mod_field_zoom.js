@@ -4,8 +4,10 @@
  */
 (function ($, Drupal, drupalSettings) {
     'use strict';
+    $('.zoom-container').each(function(e,i){
+    var $this = $(this);
     var setting_zoom = drupalSettings.views.ZoomViews;
-    var selector = $("img[id^='zoom-formatter']");
+    var selector = $this.find("img[id^='zoom-formatter']");
     var settings_mode = {
         'zoomType' : setting_zoom.zoomType,
         'borderColour': setting_zoom.borderColour,
@@ -16,8 +18,6 @@
         'easingDuration' : setting_zoom.easingDuration,
         'responsive' : (setting_zoom.responsive == 1 ) ? true : false,
         'scrollZoom' : (setting_zoom.scrollzoom == 1 ) ? true : false,
-        'gallery'    :'gallery-zoom',
-        'galleryActiveClass':"active",
         'imageCrossfade': true,
     };
 
@@ -59,15 +59,19 @@
             break;
 
     }
+        settings_mode.gallery = $this.find(".gallery-zoom").attr('id');
+        settings_mode.galleryActiveClass = 'active';
 
-    selector.elevateZoom(settings_mode);
+        selector.elevateZoom(settings_mode);
 
-    $('.gallery-zoom a').attr('href','#');
+        $this.find('.gallery-zoom a').attr('href','#');
 
-    $("#zoom-formatter").bind("click", function(e) {
-        var ez =   $('#zoom-formatter').data('elevateZoom');
-        ez.closeAll(); //NEW: This function force hides the lens, tint and window
-        $.fancybox(ez.getGalleryList());
-        return false;
+        $this.find("div[id^='zoom-formatter']").bind("click", function(e) {
+            var ez =   $(this).data('elevateZoom');
+            ez.closeAll();
+            $.fancybox(ez.getGalleryList());
+            return false;
+        });
     });
-})(jQuery, Drupal, drupalSettings);;
+
+})(jQuery, Drupal, drupalSettings);

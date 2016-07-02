@@ -34,7 +34,7 @@ function template_preprocess_zoom_formatter(&$variables){
         );
     }
 
-    $variables['image']['#attributes']['id'] = Utility\Html::getId('zoom-formatter');
+    $variables['image']['#attributes']['id'] = Utility\Html::getUniqueId('zoom-formatter');
 
     // Do not output an empty 'title' attribute.
     if (Unicode::strlen($item->title) != 0) {
@@ -88,7 +88,7 @@ function template_preprocess_gallery_formatter(&$variables){
             ), Url::fromUserInput('#',array('attributes' => array('class' => array('item-link'),'data-image' => drupal_render($image_style_url),'data-zoom-image' => drupal_render($zoom_style_url)))));
 
         }
-    $variables['attributes']['id'] = Utility\Html::getId('gallery-zoom');
+    $variables['attributes']['id'] = Utility\Html::getUniqueId('gallery-zoom');
     $variables['attributes']['class'][] = 'gallery-zoom';
     $variables['gallery'] = $gallery;
 }
