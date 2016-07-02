@@ -1,0 +1,20 @@
+jquery.elevatezoom:
+  version: VERSION
+  js:
+    js/jquery.elevatezoom.js: {}
+    js/jquery.mousewheel.js: {}
+    js/mod_field_zoom.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+jquery.fancybox:
+  version: VERSION
+  css:
+    layout:
+      vendor/fancybox/jquery.fancybox.css: {}
+  js:
+    vendor/fancybox/jquery.fancybox.js: {}

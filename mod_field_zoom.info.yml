@@ -1,0 +1,11 @@
+name: Zoom field image
+type: module
+description: This module by team Joomlavi
+package: Custom module - Required
+
+dependencies:
+  - file
+  - image
+
+core: 8.x
+version: 1.0

@@ -1,0 +1,30 @@
+<?php
+
+function mod_field_zoom_theme(){
+    $item = array();
+
+    $item['zoom_formatter'] = array(
+        'variables' => array(
+            'item' => null,
+            'image_style' => null,
+            'zoom_image_style' => null,
+        ),
+        'file' => 'mod_field_zoom.theme.inc'
+    );
+    $item['gallery_formatter'] = array(
+        'variables' => array(
+            'items' => null,
+            'image_style' => null,
+            'zoom_image_style' => null,
+        ),
+        'file' => 'mod_field_zoom.theme.inc'
+    );
+
+    $item['zoom_wrapper'] = array(
+        'render element' => 'element',
+        'file' => 'mod_field_zoom.theme.inc',
+    );
+
+    return $item;
+}
+
