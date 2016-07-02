@@ -11,7 +11,7 @@ use Drupal\image\Entity\ImageStyle;
 
 define('FULL_URL',0);
 define('ABSOLUTE_FILE_PATH',1);
-define('Relative_FILE_PATH',2);
+define('RELATIVE_FILE_PATH',2);
 
 
 function template_preprocess_zoom_formatter(&$variables){
