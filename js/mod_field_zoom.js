@@ -4,7 +4,6 @@
  */
 (function ($, Drupal, drupalSettings) {
     'use strict';
-    console.log(drupalSettings.views.ZoomViews);
     var setting_zoom = drupalSettings.views.ZoomViews;
     var selector = $("img[id^='zoom-formatter']");
     var settings_mode = {

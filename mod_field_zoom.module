@@ -15,6 +15,7 @@ function mod_field_zoom_theme(){
         'variables' => array(
             'items' => null,
             'image_style' => null,
+            'gallery_style' => null,
             'zoom_image_style' => null,
         ),
         'file' => 'mod_field_zoom.theme.inc'

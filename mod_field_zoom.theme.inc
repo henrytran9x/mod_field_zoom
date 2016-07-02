@@ -15,7 +15,7 @@ define('RELATIVE_FILE_PATH',2);
 
 
 function template_preprocess_zoom_formatter(&$variables){
-    //var_dump($variables);//die();
+
     $item = $variables['item'];
     $entity = $item->entity;
 
@@ -67,7 +67,7 @@ function template_preprocess_gallery_formatter(&$variables){
             $image_style_url =  array(
                 '#theme' => 'image_url_formatter',
                 '#item'  => $item,
-                '#image_style'=> 'product_zoom',
+                '#image_style'=> $variables['image_style'],
                 '#url' => $item->uri,
                 '#url_type' => FULL_URL,
             );
@@ -80,10 +80,11 @@ function template_preprocess_gallery_formatter(&$variables){
                 '#url_type' => FULL_URL,
             );
 
+
             $gallery[]= \Drupal::l(array(
                 '#theme' => 'image_formatter',
                 '#item'  => $item,
-                '#image_style' => $variables['image_style'],
+                '#image_style' => $variables['gallery_style'],
             ), Url::fromUserInput('#',array('attributes' => array('class' => array('item-link'),'data-image' => drupal_render($image_style_url),'data-zoom-image' => drupal_render($zoom_style_url)))));
 
         }

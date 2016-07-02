@@ -608,7 +608,8 @@ class ZoomFieldFormatter extends  ImageFormatterBase implements  ContainerFactor
         $gallery = array(
             '#theme' => 'gallery_formatter',
             '#items' => $items,
-            '#image_style' => $this->getSetting('format_gallery'),
+            '#image_style'   => $this->getSetting('image_style'),
+            '#gallery_style' => $this->getSetting('format_gallery'),
             '#zoom_image_style' => $this->getSetting('zoom_image_style'),
             '#attributes' => array(
                 'class' => array('list-img-zoom'),
