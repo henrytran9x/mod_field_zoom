@@ -3,6 +3,9 @@ type: module
 description: This module by team Joomlavi
 package: Custom module - Required
 
+
+
+
 dependencies:
   - file
   - image
